@@ -1,0 +1,13 @@
+machine:
+  node:
+    version: 4.4.7
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./circle_deploy.sh
+general:
+  branches:
+    only: # run builds on pushes to these branches
+      - master
