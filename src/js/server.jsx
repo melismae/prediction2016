@@ -7,11 +7,16 @@ import routes from './shared/routes';
 import { configureStore } from './configure-store';
 import { Provider } from 'react-redux';
 
+/** we may want to set up the initial data fetch by creating
+  * an Application class that fetches the data, then calls the code below in a
+  * separate function
+*/
 const app = express();
 app.use(express.static('public'));
 
 app.use((req, res) => {
     const location = createLocation(req.url);
+    // here's where you'd want to pass the bootstrap data into configureStore
     const store = configureStore({});
 
     match({ routes, location }, (err, redirectLocation, renderProps) => {
