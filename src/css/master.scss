@@ -1,5 +1,16 @@
-#app-view {
-    h1 {
-        background-color: green;
-    }
+@import "normalise";
+@import url('https://fonts.googleapis.com/css?family=Alegreya:700|Source+Sans+Pro:300');
+
+body {
+  background-color: #04004F;
+  color: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+  h1 {
+    font-family: 'Alegreya', serif;
+    text-align:center;
+    background-color: white;
+    color: #04004F;
+    padding: 10px;
+    width: 300px;
+  }
 }
