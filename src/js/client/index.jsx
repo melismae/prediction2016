@@ -6,6 +6,8 @@ import routes from '../shared/routes';
 import { configureStore } from '../configure-store';
 import '../../css/master.scss';
 
+// we may actually want to ensure this gets called on the browser only
+// let initialState = proccess.browser ? window.__INITIAL_STATE__ : {};
 let initialState = window.__INITIAL_STATE__;
 
 const store = configureStore(initialState);
