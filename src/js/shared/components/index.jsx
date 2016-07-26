@@ -3,20 +3,20 @@ import { connect } from 'react-redux';
 import Home from './Home';
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
-        // todos: state.todos
+        candidates: state.sources.candidates,
+        sources: state.sources.sources,
+        dropdown: state.dropdown,
+        winning: state.sources.partyWinning
     };
 };
 class App extends Component {
     render() {
-        let { todos, children } = this.props;
-        let childrenWithProps = children ? React.cloneElement(children, this.props) : '';
+        let { candidates, sources, dropdown, winning } = this.props;
 
         return (
             <div id="app-view">
-                <Home todos={todos} />
-                <div>{childrenWithProps}</div>
+                <Home candidates={candidates} sources={sources} dropdown={dropdown} winning={winning} />
             </div>
         );
     }

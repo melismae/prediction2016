@@ -1,11 +1,8 @@
-export const DROPDOWN_SHOW = 'DROPDOWN_SHOW';
-export const DROPDOWN_HIDE = 'DROPDOWN_HIDE';
-export const DROPDOWN_SELECT = 'DROPDOWN_SELECT';
 import {
     DROPDOWN_SHOW,
     DROPDOWN_HIDE,
     DROPDOWN_SELECT,
-} from '../constants/todos';
+} from '../constants/dropdown';
 
 const initialState = {
     selected: 0,

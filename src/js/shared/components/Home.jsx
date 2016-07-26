@@ -4,45 +4,8 @@ import Dropdown from './Dropdown';
 
 
 export default class Home extends Component {
-    constructor() {
-        super(props);
-        // this.state = {
-        // // int republicanPercent
-        // // int democratPercent
-        // // int date
-        // // str source - note this will be coming in as a slug - need to parse
-        //     selected: 1,
-        //     partyWinning: 'D',
-        //     sources: [
-        //       {
-        //         source: 'FiveThirtyEight',
-        //         republicanPercent: 40,
-        //         democratPercent: 51,
-        //         date: "7/22/16"
-        //       },
-        //       {
-        //         source: 'PredictWise',
-        //         republicanPercent: 52,
-        //         democratPercent: 42,
-        //         date: "7/23/16"
-        //       }
-        //   ],
-        //   candidates: {
-        //       republican: {
-        //           firstname: 'Donald',
-        //           lastname: 'Trump'
-        //       },
-        //       democrat: {
-        //           firstname: 'Hillary',
-        //           lastname: 'Clinton'
-        //       }
-        //   }
-        // }
-    }
-
 
     render() {
-
 
         return (
             <div>
