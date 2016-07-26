@@ -1,0 +1,2 @@
+export const INITIAL_FETCH = 'INITIAL_FETCH';
+export const SET_WINNING_PARTY = 'SET_WINNING_PARTY';
