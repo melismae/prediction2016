@@ -12,11 +12,10 @@ const mapStateToProps = (state) => {
 };
 class App extends Component {
     render() {
-        let { candidates, sources, dropdown, winning } = this.props;
-
+        let { candidates, sources, dropdown, winning, dispatch } = this.props;
         return (
             <div id="app-view">
-                <Home candidates={candidates} sources={sources} dropdown={dropdown} winning={winning} />
+                <Home candidates={candidates} sources={sources} dropdown={dropdown} winning={winning} dispatch={dispatch} />
             </div>
         );
     }

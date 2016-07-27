@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { dropdownSelect } from '../actions/DropdownActions';
 
 export default class Dropdown extends Component {
     constructor(props) {
@@ -7,16 +7,15 @@ export default class Dropdown extends Component {
         this.selectList = this.selectList.bind(this);
     }
 
-    selectList(list, index) {
-        console.log("here");
+    selectList(e) {
+        this.props.dispatch(dropdownSelect(e.target.value));
     }
 
-    getSources() {
-        let sources = this.props.sources;
+    getSources(sources) {
         return sources.map((entry, index) => {
             return (
-                <option onClick={() => this.selectList(entry.source, index)}
-                    className="list-name"
+                <option className="list-name"
+                    value={index}
                     key={index}>
                     {entry.source}
                 </option>
@@ -25,10 +24,11 @@ export default class Dropdown extends Component {
     }
 
     render() {
+        let { sources, dropdown } = this.props;
         return (
             <div>
-              <select>
-                {this.getSources()}
+              <select onChange={(e) => this.selectList(e)}>
+                {this.getSources(sources)}
               </select>
             </div>
         );
