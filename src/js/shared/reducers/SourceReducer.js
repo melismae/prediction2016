@@ -4,8 +4,27 @@ import {
 } from '../constants/sources';
 
 const initialState = {
+
     partyWinning: '',
-    sources: [],
+    sources: [
+        // FETCH WILL PROVIDE
+        // int republicanPercent
+        // int democratPercent
+        // int date
+        // str source - note this will be coming in as a slug - need to parse
+        {
+            source: 'Primary Model (Helmut Norpath)',
+            democratPercent: 13,
+            republicanPercent: 87,
+            winning: 'Clinton',
+            url: 'http://primarymodel.com/'
+        },
+        {
+            source: 'Betsey Lewis, Psychic',
+            winning: 'Trump',
+            url: 'http://www.betseylewis.com/2016_Predictions.html'
+        }
+    ],
     candidates: {
         republican: {
             firstname: 'Donald',
