@@ -43,6 +43,9 @@ export default function sourceReducer(state = initialState, action) {
         case INITIAL_FETCH:
 
         case SET_WINNING_PARTY:
+            return Object.assign({}, state, {
+                partyWinning: partyWinning
+            });
 
         default:
             return state;

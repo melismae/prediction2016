@@ -1,16 +1,98 @@
 @import "normalise";
-@import url('https://fonts.googleapis.com/css?family=Alegreya:700|Source+Sans+Pro:300');
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,700|Source+Sans+Pro:300,400,500,600,700');
 
 body {
-  background-color: #04004F;
-  color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;
-  h1 {
-    font-family: 'Alegreya', serif;
-    text-align:center;
-    background-color: white;
-    color: #04004F;
-    padding: 10px;
-    width: 300px;
-  }
+    background-color: #ddd;
+    color: #666;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    #container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+        position:relative;
+        h1,h2,h3,p {
+            margin: 0;
+        }
+        h1 {
+            font-family: 'Alegreya', serif;
+            text-align:center;
+            padding: 0 10px 20px;
+            width: 100%;
+            margin: 0 auto;
+            font-weight: 700;
+            font-size: 56px;
+            letter-spacing: 0.03em;
+        }
+        h2 {
+            margin: 0 auto;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 0.06em;
+            background-color:khaki;
+            font-weight: 600;
+        }
+        p {
+            text-align: center;
+            font-size: 22px;
+            letter-spacing: 0.03em;
+            line-height: 1.5;
+        }
+        #top {
+            width: 100%;
+            #dropdown {
+                display:inline-block;
+                width: 280px;
+                height: 50px;
+                overflow: hidden;
+                background: url('https://cdn4.iconfinder.com/data/icons/mayssam/512/down-16.png') no-repeat 256px 19px #FEFEFE;
+                border: #FEFEFE 1px solid;
+                border-radius: 3px;
+                box-shadow: inset 0px 0px 10px 1px #FEFEFE;
+                margin-top:30px;
+                margin-right: 15px;
+                select {
+                    background: transparent;
+                    width: 280px;
+                    font-size:18px;
+                    color: #63bfbe;
+                    border: 0;
+                    border-radius: 0;
+                    height: 50px;
+                    padding: 0 10px;
+                    -webkit-appearance: none;
+                    &:focus {
+                     outline: none;
+                    }
+                }
+            }
+            #page-title {
+                display: inline-block;
+                top: 0px;
+                height: 30px;
+                margin-top: 40px;
+                margin-right: 15px;
+                vertical-align: top;
+                position:absolute;
+                right:0;
+
+            }
+        }
+        #selected-text {
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 100px;
+            width: 60%;
+            p:first-of-type {
+                text-transform: uppercase;
+                font-weight: 600;
+                color: #999;
+            }
+            p ~ p {
+                margin-bottom: 16px;
+                background-color: white;
+                padding: 20px;
+            }
+        }
+    }
 }
