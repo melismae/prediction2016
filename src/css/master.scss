@@ -1,5 +1,7 @@
 @import "normalise";
 @import url('https://fonts.googleapis.com/css?family=Alegreya:400,700|Source+Sans+Pro:300,400,500,600,700');
+$breakpoint-mobile: 550px;
+$breakpoint-tablet: 820px; // not using right now - might use later
 
 body {
     background-color: #ddd;
@@ -17,12 +19,13 @@ body {
         h1 {
             font-family: 'Alegreya', serif;
             text-align:center;
-            padding: 0 10px 20px;
             width: 100%;
             margin: 0 auto;
             font-weight: 700;
             font-size: 56px;
             letter-spacing: 0.03em;
+            line-height: 1;
+            margin-bottom: 30px;
         }
         h2 {
             margin: 0 auto;
@@ -31,30 +34,32 @@ body {
             letter-spacing: 0.06em;
             background-color:khaki;
             font-weight: 600;
+            padding: 0 10px;
         }
         p {
             text-align: center;
-            font-size: 22px;
+            font-size: 20px;
             letter-spacing: 0.03em;
             line-height: 1.5;
         }
         #top {
             width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
             #dropdown {
-                display:inline-block;
-                width: 280px;
+                display:flex;
+                width: 100%;
                 height: 50px;
                 overflow: hidden;
-                background: url('https://cdn4.iconfinder.com/data/icons/mayssam/512/down-16.png') no-repeat 256px 19px #FEFEFE;
+                background: url('https://cdn4.iconfinder.com/data/icons/mayssam/512/down-16.png') no-repeat 95% 19px #FEFEFE;
                 border: #FEFEFE 1px solid;
                 border-radius: 3px;
                 box-shadow: inset 0px 0px 10px 1px #FEFEFE;
-                margin-top:30px;
-                margin-right: 15px;
+                margin: 0 auto;
                 select {
                     background: transparent;
-                    width: 280px;
-                    font-size:18px;
+                    width: 100%;
+                    font-size:16px;
                     color: #63bfbe;
                     border: 0;
                     border-radius: 0;
@@ -67,22 +72,21 @@ body {
                 }
             }
             #page-title {
-                display: inline-block;
+                display: flex;
                 top: 0px;
-                height: 30px;
-                margin-top: 40px;
-                margin-right: 15px;
+                height: 21px;
+                margin-top: 20px;
+                margin-bottom: 30px;
                 vertical-align: top;
-                position:absolute;
                 right:0;
-
+                border-bottom: 1px solid #ececec;
             }
         }
         #selected-text {
             margin: 0 auto;
             text-align: center;
-            margin-top: 100px;
-            width: 60%;
+            margin-top: 30px;
+            width: 100%;
             p:first-of-type {
                 text-transform: uppercase;
                 font-weight: 600;
@@ -91,7 +95,43 @@ body {
             p ~ p {
                 margin-bottom: 16px;
                 background-color: white;
-                padding: 20px;
+                padding: 15px;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-mobile) {
+    body {
+        #container {
+            h1 {
+                margin-top: 5px;
+            }
+            p {
+                font-size: 22px;
+            }
+            #top {
+                #dropdown {
+                    display:inline-block;
+                    width: 300px;
+                    background: url('https://cdn4.iconfinder.com/data/icons/mayssam/512/down-16.png') no-repeat 276px 19px #FEFEFE;
+                    margin-top:30px;
+                    margin-left: 0px;
+                    select {
+                        width: 300px;
+                        font-size:18px;                        
+                    }
+                }
+                #page-title {
+                    display: inline-block;
+                    height: 30px;
+                    margin: 43px 15px 0 0;
+                    position:absolute;
+                }
+            }
+            #selected-text {
+                margin-top: 100px;
+                width: 80%;
             }
         }
     }
