@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { dropdownSelect } from '../actions/DropdownActions';
+import { dropdownSelect } from '../actions/SourceActions';
 
 export default class Dropdown extends Component {
     constructor(props) {

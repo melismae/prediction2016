@@ -1,11 +1,9 @@
 import {
-    INITIAL_FETCH,
-    SET_WINNING_PARTY
+    DROPDOWN_SELECT
 } from '../constants/sources';
 
 const initialState = {
-
-    partyWinning: '',
+    selected: 0,
     sources: [
         // FETCH WILL PROVIDE
         // int republicanPercent
@@ -16,12 +14,12 @@ const initialState = {
             source: 'Primary Model (Helmut Norpath)',
             democratPercent: 13,
             republicanPercent: 87,
-            winning: 'Clinton',
+            winning: 'republican',
             url: 'http://primarymodel.com/'
         },
         {
             source: 'Betsey Lewis, Psychic',
-            winning: 'Trump',
+            winning: 'republican',
             url: 'http://www.betseylewis.com/2016_Predictions.html'
         }
     ],
@@ -37,16 +35,12 @@ const initialState = {
     }
 };
 
-
-export default function sourceReducer(state = initialState, action) {
+export default function dropdownReducer(state = initialState, action) {
     switch(action.type) {
-        case INITIAL_FETCH:
-
-        case SET_WINNING_PARTY:
+        case DROPDOWN_SELECT:
             return Object.assign({}, state, {
-                partyWinning: partyWinning
+                selected: action.data.id
             });
-
         default:
             return state;
     }

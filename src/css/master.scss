@@ -3,6 +3,8 @@
 $breakpoint-mobile: 550px;
 $breakpoint-tablet: 820px; // not using right now - might use later
 
+// TODO -> colors, span for emph, font stack, vendor prefix via postcss
+
 body {
     background-color: #ddd;
     color: #666;
@@ -119,7 +121,7 @@ body {
                     margin-left: 0px;
                     select {
                         width: 300px;
-                        font-size:18px;                        
+                        font-size:18px;
                     }
                 }
                 #page-title {
