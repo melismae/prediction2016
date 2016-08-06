@@ -24,7 +24,7 @@ export default class Dropdown extends Component {
     }
 
     render() {
-        let { sources, dropdown } = this.props;
+        let { sources, selected } = this.props;
         return (
             <div id="dropdown">
               <select onChange={(e) => this.selectList(e)}>

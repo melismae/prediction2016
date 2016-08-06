@@ -15,7 +15,7 @@ export default class Home extends Component {
         return (
             <div id="container">
                 <div id="top">
-                    <Dropdown sources={sources} dropdown={dropdown} dispatch={dispatch} />
+                    <Dropdown sources={sources} selected={selected} dispatch={dispatch} />
                     <div id="page-title">
                         <h2>predict16</h2>
                     </div>
