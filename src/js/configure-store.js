@@ -2,7 +2,6 @@ import React from 'react';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga'
 import * as reducers from './shared/reducers';
-
 const sagaMiddleware = createSagaMiddleware()
 const reducer = combineReducers(reducers);
 const developmentMiddleware = compose(

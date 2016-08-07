@@ -6,7 +6,7 @@ export default class Home extends Component {
 
     render() {
         let { candidates, sources, selected, dispatch } = this.props;
-        let source = sources[selected];
+        let source = sources[selected] ? sources[selected] : "";
         let winningParty = source.winning;
         let losingParty = winningParty === 'democrat' ? 'republican' : 'democrat';
         let winningPercent = `${winningParty}Percent`;

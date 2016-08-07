@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Home from './Home';
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         candidates: state.sources.candidates,
         sources: state.sources.sources,
