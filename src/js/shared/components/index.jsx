@@ -4,11 +4,12 @@ import Home from './Home';
 
 const mapStateToProps = (state) => {
     return {
-        candidates: state.sources.candidates,
-        sources: state.sources.sources,
-        selected: state.sources.selected
+        candidates: state.candidates,
+        sources: state.sources,
+        selected: state.UI.selected
     };
 };
+
 class App extends Component {
     render() {
         let { candidates, sources, selected, dispatch } = this.props;

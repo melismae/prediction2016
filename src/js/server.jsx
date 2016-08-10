@@ -25,18 +25,7 @@ app.use((req, res) => {
 
         function renderView(data) {
             const locals = {
-                sources: data,
-                selected: 0,
-                candidates: {
-                    republican: {
-                        firstname: 'Donald',
-                        lastname: 'Trump'
-                    },
-                    democrat: {
-                        firstname: 'Hillary',
-                        lastname: 'Clinton'
-                    }
-                }
+                sources: data
             };
             const store = configureStore(locals);
             const InitialComponent = (
