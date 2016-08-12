@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import routes from './shared/routes';
 import { configureStore } from './configure-store';
+import { makeLocals } from './initial-state';
 
 const app = express();
 app.use(express.static('public'));
@@ -24,9 +25,7 @@ app.use((req, res) => {
         }
 
         function renderView(data) {
-            const locals = {
-                sources: data
-            };
+            const locals = makeLocals(data);
             const store = configureStore(locals);
             const InitialComponent = (
                 <Provider store={store}>

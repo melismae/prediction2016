@@ -1,1 +1,0 @@
-export const DROPDOWN_SELECT = 'DROPDOWN_SELECT';
