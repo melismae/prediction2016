@@ -17,7 +17,7 @@ export default class Dropdown extends Component {
                 <option className="list-name"
                     value={index}
                     key={index}>
-                    {entry.source}
+                    {entry.sourceName}
                 </option>
             );
         });

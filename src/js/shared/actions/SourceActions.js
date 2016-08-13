@@ -1,6 +1,6 @@
 import {
     DROPDOWN_SELECT
-} from '../constants/sources';
+} from '../constants/index';
 
 export function dropdownSelect(id) {
     return {

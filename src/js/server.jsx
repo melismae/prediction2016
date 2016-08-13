@@ -8,36 +8,23 @@ import axios from 'axios';
 
 import routes from './shared/routes';
 import { configureStore } from './configure-store';
+import { makeLocals } from './initial-state';
 
 const app = express();
 app.use(express.static('public'));
 
 app.use((req, res) => {
     const location = createLocation(req.url);
+
     match({ routes, location }, (err, redirectLocation, renderProps) => {
         if (err) {
-            console.error(err);
             return res.status(500).end('Internal server error');
         }
         if (!renderProps) {
             return res.status(404).end('Not found.');
         }
-
         function renderView(data) {
-            const locals = {
-                sources: data,
-                selected: 0,
-                candidates: {
-                    republican: {
-                        firstname: 'Donald',
-                        lastname: 'Trump'
-                    },
-                    democrat: {
-                        firstname: 'Hillary',
-                        lastname: 'Clinton'
-                    }
-                }
-            };
+            const locals = makeLocals(data);
             const store = configureStore(locals);
             const InitialComponent = (
                 <Provider store={store}>
@@ -72,7 +59,6 @@ app.use((req, res) => {
         axios.get('http://api.predict16.com/api/v1/predictions')
             .then(response => {
                 let data = response.data;
-                // TODO - if there's no data return a response to the client a 400 or 500 or something else
                 if (!data) {
                     return;
                 }
@@ -83,7 +69,8 @@ app.use((req, res) => {
                 res.end(html)
             })
             .catch(error => {
-                console.log(error)
+                let data = [];
+                renderView(data);
             });
     });
 });
