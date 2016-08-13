@@ -1,3 +1,3 @@
-export default function sourcesReducer(state = {}) {
+export default function sourcesReducer(state = {}, action) {
     return state;
 }

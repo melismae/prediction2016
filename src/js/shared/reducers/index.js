@@ -1,3 +1,3 @@
-export { default as UI } from './UIReducer';
-export { default as candidates } from './CandidatesReducer';
-export { default as sources } from './SourcesReducer';
+export { default as ui } from './uiReducer';
+export { default as candidates } from './candidatesReducer';
+export { default as sources } from './sourcesReducer';

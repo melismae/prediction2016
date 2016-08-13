@@ -3,7 +3,7 @@ import { DEMOCRAT, REPUBLICAN, SOURCES } from './shared/constants';
 export const makeLocals = (data) => {
     let obj = {
         sources: [...data, ...SOURCES],
-        UI: {
+        ui: {
             selected: 0
         },
         candidates: {

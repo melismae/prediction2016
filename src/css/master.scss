@@ -6,7 +6,7 @@ $breakpoint-tablet: 820px; // not using right now - might use later
 // TODO -> colors, span for emph, font stack, vendor prefix via postcss
 
 body {
-    background-color: #ddd;
+    background-color: #dadada;
     color: #666;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
@@ -28,13 +28,19 @@ body {
             letter-spacing: 0.03em;
             line-height: 1;
             margin-bottom: 30px;
+            &.democrat {
+                color: #348899;
+            }
+            &.republican {
+                color: #962D3E;
+            }
         }
         h2 {
             margin: 0 auto;
             text-transform: uppercase;
             font-size: 16px;
             letter-spacing: 0.06em;
-            background-color:khaki;
+            background-color:#F2EBC7;
             font-weight: 600;
             padding: 0 10px;
         }
@@ -43,6 +49,31 @@ body {
             font-size: 20px;
             letter-spacing: 0.03em;
             line-height: 1.5;
+            margin-bottom: 16px;
+            a.democrat {
+                border-bottom: 1px solid #348899;
+                color: inherit;
+                text-decoration: none;
+                &:visited {
+                    color: inherit;
+                }
+                &:hover {
+                    transition: 0.1s;
+                    color: #348899;
+                }
+            }
+            a.republican {
+                border-bottom: 1px solid #962D3E;
+                color: inherit;
+                text-decoration: none;
+                &:visited {
+                    color: inherit;
+                }
+                &:hover {
+                    transition: 0.1s;
+                    color: #962D3E;
+                }
+            }
         }
         #top {
             width: 100%;
@@ -62,7 +93,8 @@ body {
                     background: transparent;
                     width: 100%;
                     font-size:16px;
-                    color: #004954;
+                    // color: #2D4C58;
+                    color: #979C9C;
                     border: 0;
                     border-radius: 0;
                     height: 50px;
@@ -81,7 +113,7 @@ body {
                 margin-bottom: 30px;
                 vertical-align: top;
                 right:0;
-                border-bottom: 1px solid #ececec;
+                border-bottom: 1px solid #F2EBC7;
             }
         }
         #selected-text {
@@ -91,11 +123,13 @@ body {
             width: 100%;
             p:first-of-type {
                 text-transform: uppercase;
-                font-weight: 600;
-                color: #999;
+                font-weight: lighter;
+                color: #888;
+                font-size: 18px;
+                letter-spacing: 0.1em;
+                margin-bottom: 8px;
             }
             p ~ p {
-                margin-bottom: 16px;
                 background-color: white;
                 padding: 15px;
             }

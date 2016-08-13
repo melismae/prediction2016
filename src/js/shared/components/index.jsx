@@ -6,7 +6,7 @@ const mapStateToProps = (state) => {
     return {
         candidates: state.candidates,
         sources: state.sources,
-        selected: state.UI.selected
+        selected: state.ui.selected
     };
 };
 

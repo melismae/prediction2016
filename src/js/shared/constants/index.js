@@ -13,6 +13,7 @@ export const DEMOCRAT  = {
 export const SOURCES = [
     {
         source: 'Primary Model (Helmut Norpath)',
+        sourceName: 'Primary Model (Helmut Norpath)',
         democrat: 13,
         republican: 87,
         winning: 'republican',
@@ -20,6 +21,7 @@ export const SOURCES = [
     },
     {
         source: 'Betsey Lewis, Psychic',
+        sourceName: 'Betsey Lewis, Psychic',
         democrat: 0,
         republican: 100,
         winning: 'republican',

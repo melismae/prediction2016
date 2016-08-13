@@ -2,7 +2,11 @@ import {
     DROPDOWN_SELECT
 } from '../constants/index';
 
-export default function UIReducer(state = {}, action) {
+const initialState = {
+    selected: 0
+}
+
+export default function uiReducer(state = initialState, action) {
     switch(action.type) {
         case DROPDOWN_SELECT:
             return Object.assign({}, state, {
