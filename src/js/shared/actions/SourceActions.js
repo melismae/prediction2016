@@ -1,22 +1,12 @@
-import axios from 'axios';
 import {
-    INITIAL_FETCH,
-    SET_WINNING_PARTY
-} from '../constants/sources';
+    DROPDOWN_SELECT
+} from '../constants/index';
 
-const ROOT_URL = ''; 
-
-export function initialFetch() {
-    const request = axios.get(`${ROOT_URL}/api/v1/predictions`);
+export function dropdownSelect(id) {
     return {
-        type: INITIAL_FETCH,
-        payload: request
+        type: DROPDOWN_SELECT,
+        data: {
+            id: id
+        }
     }
-}
-
-export function setWinningParty(id) {
-    return {
-        type: SET_WINNING_PARTY,
-        id: id
-    };
 }

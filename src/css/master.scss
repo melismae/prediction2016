@@ -1,16 +1,174 @@
 @import "normalise";
-@import url('https://fonts.googleapis.com/css?family=Alegreya:700|Source+Sans+Pro:300');
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,700|Source+Sans+Pro:300,400,500,600,700');
+$breakpoint-mobile: 550px;
+$breakpoint-tablet: 820px; // not using right now - might use later
+
+// TODO -> colors, span for emph, font stack, vendor prefix via postcss
 
 body {
-  background-color: #04004F;
-  color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;
-  h1 {
-    font-family: 'Alegreya', serif;
-    text-align:center;
-    background-color: white;
-    color: #04004F;
-    padding: 10px;
-    width: 300px;
-  }
+    background-color: #dadada;
+    color: #666;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    #container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 0 15px;
+        position:relative;
+        h1,h2,h3,p {
+            margin: 0;
+        }
+        h1 {
+            font-family: 'Alegreya', serif;
+            text-align:center;
+            width: 100%;
+            margin: 0 auto;
+            font-weight: 700;
+            font-size: 56px;
+            letter-spacing: 0.03em;
+            line-height: 1;
+            margin-bottom: 30px;
+            &.democrat {
+                color: #348899;
+            }
+            &.republican {
+                color: #962D3E;
+            }
+        }
+        h2 {
+            margin: 0 auto;
+            text-transform: uppercase;
+            font-size: 16px;
+            letter-spacing: 0.06em;
+            background-color:#F2EBC7;
+            font-weight: 600;
+            padding: 0 10px;
+        }
+        p {
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 0.03em;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            a.democrat {
+                border-bottom: 1px solid #348899;
+                color: inherit;
+                text-decoration: none;
+                &:visited {
+                    color: inherit;
+                }
+                &:hover {
+                    transition: 0.1s;
+                    color: #348899;
+                }
+            }
+            a.republican {
+                border-bottom: 1px solid #962D3E;
+                color: inherit;
+                text-decoration: none;
+                &:visited {
+                    color: inherit;
+                }
+                &:hover {
+                    transition: 0.1s;
+                    color: #962D3E;
+                }
+            }
+        }
+        #top {
+            width: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            #dropdown {
+                display:flex;
+                width: 100%;
+                height: 50px;
+                overflow: hidden;
+                background: url('https://cdn4.iconfinder.com/data/icons/mayssam/512/down-16.png') no-repeat 95% 19px #FEFEFE;
+                border: #FEFEFE 1px solid;
+                border-radius: 3px;
+                box-shadow: inset 0px 0px 10px 1px #FEFEFE;
+                margin: 0 auto;
+                select {
+                    background: transparent;
+                    width: 100%;
+                    font-size:16px;
+                    // color: #2D4C58;
+                    color: #979C9C;
+                    border: 0;
+                    border-radius: 0;
+                    height: 50px;
+                    padding: 0 10px;
+                    -webkit-appearance: none;
+                    &:focus {
+                     outline: none;
+                    }
+                }
+            }
+            #page-title {
+                display: flex;
+                top: 0px;
+                height: 21px;
+                margin-top: 20px;
+                margin-bottom: 30px;
+                vertical-align: top;
+                right:0;
+                border-bottom: 1px solid #F2EBC7;
+            }
+        }
+        #selected-text {
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+            p:first-of-type {
+                text-transform: uppercase;
+                font-weight: lighter;
+                color: #888;
+                font-size: 18px;
+                letter-spacing: 0.1em;
+                margin-bottom: 8px;
+            }
+            p ~ p {
+                background-color: white;
+                padding: 15px;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-mobile) {
+    body {
+        #container {
+            h1 {
+                margin-top: 5px;
+            }
+            p {
+                font-size: 22px;
+            }
+            #top {
+                #dropdown {
+                    display:inline-block;
+                    width: 300px;
+                    background: url('https://cdn4.iconfinder.com/data/icons/mayssam/512/down-16.png') no-repeat 276px 19px #FEFEFE;
+                    margin-top:30px;
+                    margin-left: 0px;
+                    select {
+                        width: 300px;
+                        font-size:18px;
+                    }
+                }
+                #page-title {
+                    display: inline-block;
+                    height: 30px;
+                    margin: 43px 15px 0 0;
+                    position:absolute;
+                }
+            }
+            #selected-text {
+                margin-top: 100px;
+                width: 80%;
+            }
+        }
+    }
 }

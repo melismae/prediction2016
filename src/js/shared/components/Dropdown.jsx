@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { dropdownSelect } from '../actions/DropdownActions';
+import { dropdownSelect } from '../actions/SourceActions';
 
 export default class Dropdown extends Component {
     constructor(props) {
@@ -17,16 +17,16 @@ export default class Dropdown extends Component {
                 <option className="list-name"
                     value={index}
                     key={index}>
-                    {entry.source}
+                    {entry.sourceName}
                 </option>
             );
         });
     }
 
     render() {
-        let { sources, dropdown } = this.props;
+        let { sources, selected } = this.props;
         return (
-            <div>
+            <div id="dropdown">
               <select onChange={(e) => this.selectList(e)}>
                 {this.getSources(sources)}
               </select>

@@ -1,9 +1,9 @@
 import React     from 'react';
-import { Route } from 'react-router';
+import { Route, Redirect } from 'react-router';
 import App from './components';
-// import SubComponent from './components/Subcomponent';
 
 export default (
     <Route component={App} path="/">
+        <Redirect from="*" to="/" />
     </Route>
 );
