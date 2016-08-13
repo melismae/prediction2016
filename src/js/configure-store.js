@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import * as reducers from './shared/reducers';
 const reducer = combineReducers(reducers);
 const devMiddleware = typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f;
