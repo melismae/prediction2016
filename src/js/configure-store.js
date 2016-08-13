@@ -1,20 +1,14 @@
 import React from 'react';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import createSagaMiddleware from 'redux-saga'
 import * as reducers from './shared/reducers';
-const sagaMiddleware = createSagaMiddleware()
 const reducer = combineReducers(reducers);
-const developmentMiddleware = compose(
-    applyMiddleware(sagaMiddleware),
-    typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
-);
-const productionMiddleware = compose(
-    applyMiddleware(sagaMiddleware)
-);
-const middleWare = process.env.NODE_ENV === 'production' ? productionMiddleware : developmentMiddleware;
+const devMiddleware = typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f;
 
 export function configureStore(initialState) {
-    const store = createStore(reducer, initialState, middleWare);
+    let store = createStore(reducer, initialState);
+    if (process.env.NODE_ENV !== 'production') {
+        store = createStore(reducer, initialState, devMiddleware);
+    }
 
     return store;
 }

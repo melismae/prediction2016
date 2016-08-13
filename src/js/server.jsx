@@ -15,12 +15,9 @@ app.use(express.static('public'));
 
 app.use((req, res) => {
     const location = createLocation(req.url);
-    console.log('location', location);
-    console.log('routes', routes);
 
     match({ routes, location }, (err, redirectLocation, renderProps) => {
         if (err) {
-            console.error('err',err);
             return res.status(500).end('Internal server error');
         }
         if (!renderProps) {
