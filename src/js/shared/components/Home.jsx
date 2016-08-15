@@ -21,7 +21,7 @@ export default class Home extends Component {
                     <p>&#8212;Get ready for&#8212;</p>
                     <h1 className={winningParty}>President {candidates[winningParty].lastname}</h1>
                     <p>According to <a href={source.url} target="_blank" className={winningParty}>{source.sourceName}</a>, {candidates[winningParty].firstname} {candidates[winningParty].lastname} has a {source[winningParty]}% chance of winning, while {candidates[losingParty].firstname} {candidates[losingParty].lastname} has a {source[losingParty]}% chance of winning.</p>
-                    <p>Don't like the chances? <a href="https://www.usa.gov/register-to-vote" target="_blank" className={winningParty}>Register</a>, then <a href="https://gttp.votinginfoproject.org/" target="_blank" className={winningParty}>get out and vote</a> on November 8th!</p>
+                    <p>Don't like the chances? <a href="https://vote.usa.gov/" target="_blank" className={winningParty}>Register</a>, then <a href="https://gttp.votinginfoproject.org/" target="_blank" className={winningParty}>get out and vote</a> on November 8th!</p>
               </div>
             </div>
         );
