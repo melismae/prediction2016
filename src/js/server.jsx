@@ -39,11 +39,25 @@ app.use((req, res) => {
                 <html>
                     <head>
                         <meta charset="utf-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        <meta name="description" content="">
+                        <meta name="keywords" content="">
+                        <meta name="author" content="">
+
+                        <meta property="og:image" content="http://predict16.com/predict16.jpg">
+                        <meta property='og:title' content='Melissa Smith'/>
+                        <meta property='og:description' content="" />
+                        <meta property='og:url' content='http://predict16.com' />
+                        <meta property="og:image:type" content="image/jpeg">
+                        <meta property="og:image:width" content="800">
+                        <meta property="og:image:height" content="533">
                         <title>Predict16</title>
                         <script type="application/javascript">
                             window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
                         </script>
                         <link rel="stylesheet" href="/main.css" />
+                        <link rel="shortcut icon" type="image/png" href='http://predict16.com/favicon.png'/>
+                        <link rel="shortcut icon" type="image/png" href='./favicon.png'/>
 
                     </head>
                     <body>
