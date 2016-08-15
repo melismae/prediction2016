@@ -37,7 +37,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?outputStyle=expanded')
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader?outputStyle=expanded')
             },
             // Inline base64 URLs for <=8k images, direct URLs for the rest
             {
@@ -47,11 +47,9 @@ module.exports = {
         ],
     },
     plugins: plugins,
-    postcss: [
-        autoprefixer({
-          browsers: ['last 2 versions']
-        })
-    ],
+    postcss: function () {
+        return [autoprefixer];
+    },
     devtool: 'inline-source-map',
     devServer: {
     hot: true,
