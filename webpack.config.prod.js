@@ -26,7 +26,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?outputStyle=expanded')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader?outputStyle=expanded')
       },
         // Inline base64 URLs for <=8k images, direct URLs for the rest
       {
@@ -34,6 +34,9 @@ module.exports = {
         loader: 'url-loader?limit=8192'
       }
     ]
+  },
+  postcss: function () {
+      return [autoprefixer];
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
