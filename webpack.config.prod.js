@@ -35,6 +35,9 @@ module.exports = {
       }
     ]
   },
+  postcss: function () {
+      return [autoprefixer];
+  },
   plugins: [
     new ExtractTextPlugin('[name].css'),
     new webpack.optimize.UglifyJsPlugin({
