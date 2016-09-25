@@ -10,6 +10,8 @@ import routes from './shared/routes';
 import { configureStore } from './configure-store';
 import { makeLocals } from './initial-state';
 
+const API = process.env.PREDICTION_API;
+
 const app = express();
 app.use(express.static('public'));
 
@@ -20,6 +22,7 @@ app.use((req, res) => {
         if (err) {
             return res.status(500).end('Internal server error');
         }
+
         if (!renderProps) {
             return res.status(404).end('Not found.');
         }
@@ -80,7 +83,7 @@ app.use((req, res) => {
         }
 
         // axios get call to the api
-        axios.get('http://api.predict16.com/api/v1/predictions')
+        axios.get(API)
             .then(response => {
                 let data = response.data;
                 if (!data) {
@@ -94,7 +97,8 @@ app.use((req, res) => {
             })
             .catch(error => {
                 let data = [];
-                renderView(data);
+                const markup = renderView(data);
+                res.end(markup);
             });
     });
 });
